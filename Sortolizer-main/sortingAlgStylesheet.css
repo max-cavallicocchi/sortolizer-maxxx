@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+h1 {
+    color: limegreen;
+    text-align: center;
+    font-size: 60;
+}
+
+button {
+    width: 19%;
+    height: 10%;
+}
+
+p {
+    color: limegreen;
+}
+ 
+#AlgorithmCanvas {
+    border-width: 1px;
+    border-color: #FFFFFF;
+}
+
+.cornerIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: limegreen;
+}
+
+.cornerIcon:hover {
+    color: white;
+}
+
+#settingsPage {
+    max-width: 600px;
+    margin: 0 auto;
+    color: limegreen;
+    font-family: sans-serif;
+}
+
+#settingsPage label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#settingsPage input[type="number"] {
+    width: 100px;
+    margin-right: 10px;
+}
+
+#settingsPage input[type="range"] {
+    width: 100%;
+}
+
+#settingsPage button {
+    width: auto;
+    height: auto;
+    padding: 6px 16px;
+    margin-right: 8px;
+}
+
+#settingsPage a {
+    color: limegreen;
+}

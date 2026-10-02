@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sortolizer - Configurazione</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="sortingAlgStylesheet.css">
+    </head>
+    <body>
+        <a href="index.html" class="cornerIcon" title="Chiudi" aria-label="Chiudi">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </a>
+        <h1>Configurazione</h1>
+        <div id="settingsPage">
+            <label for="numBarsInput">Numero di linee nel grafico (4 - 1024)</label>
+            <input type="number" id="numBarsInput" min="4" max="1024" step="1">
+            <input type="range" id="numBarsRange" min="4" max="1024" step="1">
+            <br>
+            <button onclick="saveSettings()">Salva</button>
+            <button onclick="resetSettings()">Ripristina default</button>
+            <p id="savedMessage" hidden>Impostazioni salvate.</p>
+        </div>
+    </body>
+</html>
+<script>
+    const DEFAULT_NUM_BARS = 256;
+    const MIN_NUM_BARS = 4;
+    const MAX_NUM_BARS = 1024;
+    const numberInput = document.getElementById("numBarsInput");
+    const rangeInput = document.getElementById("numBarsRange");
+
+    function setValue(value){
+        numberInput.value = value;
+        rangeInput.value = value;
+        document.getElementById("savedMessage").hidden = true;
+    }
+
+    function saveSettings(){
+        let value = parseInt(numberInput.value, 10);
+        if (!Number.isInteger(value)) { value = DEFAULT_NUM_BARS; }
+        value = Math.min(MAX_NUM_BARS, Math.max(MIN_NUM_BARS, value));
+        setValue(value);
+        try { localStorage.setItem("sortolizer.numBars", value); } catch (e) {}
+        document.getElementById("savedMessage").hidden = false;
+    }
+
+    function resetSettings(){
+        setValue(DEFAULT_NUM_BARS);
+        saveSettings();
+    }
+
+    numberInput.addEventListener("input", () => setValue(numberInput.value));
+    rangeInput.addEventListener("input", () => setValue(rangeInput.value));
+
+    let stored = null;
+    try { stored = parseInt(localStorage.getItem("sortolizer.numBars"), 10); } catch (e) {}
+    setValue(Number.isInteger(stored) ? stored : DEFAULT_NUM_BARS);
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sortoliser</title> 
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="stylesheet" href="sortingAlgStylesheet.css">
+    </head>
+    <body>
+        <a href="settings.html" class="cornerIcon" title="Configurazione" aria-label="Configurazione">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </a>
+        <h1>Sortolizer</h1>
+        <div style="margin: 2%;" id="mainPage">
+            <canvas id="AlgorithmCanvas" width="900" height="500">Unfortuntely canvas is not supported by your browser</canvas>
+            <button style="width: 96%;" onclick="shuffleBarsEntry()">Shuffle Bars</button>
+            <button style="width: 96%" onclick="loadLastShuffledBars()">Load bar position from last shuffle</button>
+            <br>
+            <br>
+
+            <button onclick="bubbleSortEntry()"> Bubble Sort </button>
+            <button onclick="insertionSortEntry()"> Insertion Sort </button>
+            <button onclick="selectionSortEntry()"> Selection Sort </button>
+            <button onclick="saltShakerSortEntry()"> Shaker Sort </button>
+            <button onclick="combSortEntry()"> Comb Sort </button>
+            <button onclick="oddEvenSortEntry()"> Odd Even Sort </button>
+            <button onclick="gnomeSortEntry()"> Gnome Sort </button>
+            <button onclick="shellSortEntry()"> Shell Sort </button>
+            <button onclick="pancakeSortEntry()"> Pancake Sort </button>
+            <button onclick="mergeSortEntry()"> Merge Sort </button>
+            <button onclick="quickSortEntry()"> Quick Sort </button>
+            <button onclick="heapSortEntry()"> Heap Sort </button>
+            <button onclick="radixSortEntry()"> Radix Sort </button>
+            <button onclick="bitonicSortEntry()"> Bitonic Sort </button>
+            <button onclick="iCantBelieveItCanSortEntry()"> I Can't Believe It Can Sort Sort </button>
+            <button onclick="bogoSortEntry()"> Bogo Sort </button>
+            <button> Miracle Sort </button>
+            <button onclick="decideSortEntry()"> Decide Sort </button>
+            <!-- <button onclick="loadLastShuffledBars()">Return to last unsorted configuration</button> -->
+        </div>
+    </body>
+</html>
+<script src="main.js"></script>
